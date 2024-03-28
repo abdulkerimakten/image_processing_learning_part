@@ -36,6 +36,7 @@ cv.imshow("ROTATING ORIGINAL by 90", rotated_by_90)
 # Resizing
 
 # resized = cv.resize(img, (500, 500), interpolation=cv.INTER_LINEAR)
+# The tuple (500, 500) represents (width, height) in the context of resizing the image.
 # cv.imshow("RESIZED", resized)
 """
 - If you are shrinking use : default or ..._AREA
