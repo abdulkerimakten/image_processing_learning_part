@@ -5,7 +5,12 @@ cv.imshow("Normal Cat", img)
 
 canny_before_blur = cv.Canny(img, 125, 175)
 cv.imshow("CANNY EDGES BEFORE BLUR", canny_before_blur)
+"""
+threshold1 = '125': Specifies the lower threshold value for edge detection. Gradient values below this threshold are suppressed and considered as non-edges.
 
+threshold2 = '175': Specifies the upper threshold value for edge detection. Gradient values above this threshold are considered as strong edges, 
+while gradient values between the lower and upper thresholds are considered as weak edges.
+"""
 
 ## First blur and then edge cascade
 
