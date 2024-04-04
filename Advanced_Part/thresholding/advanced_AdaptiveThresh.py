@@ -18,4 +18,12 @@ adaptive_thresh = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.
 cv.imshow("Adaptive Thresholed", adaptive_thresh)
 
 
+"""
+blockSize = '11' : Specifies the size of the pixel neighborhood used to calculate the adaptive threshold. 
+This parameter determines the size of the area around each pixel that influences the threshold calculation.
+
+C = '4': Represents a constant value subtracted from the calculated mean or weighted mean. 
+It helps fine-tune the threshold value.
+"""
+
 cv.waitKey(0)
