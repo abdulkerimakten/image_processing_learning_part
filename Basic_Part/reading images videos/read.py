@@ -8,7 +8,7 @@ import cv2 as cv
 
 #---------------------------------------------------------------------------------
 
-# Reading Videos
+# Reading Videos (For dog video)
 
 capture = cv.VideoCapture("Videos/dog.mp4")
 
@@ -45,3 +45,24 @@ capture.release(): Releases the VideoCapture object. This is important to releas
 
 cv.destroyAllWindows(): Closes all OpenCV windows. This ensures all windows are closed when we terminate the program.
 """
+
+
+
+### Reading Video (for kitten video)
+
+video = cv.VideoCapture(r"Videos\kitten.mp4")
+
+ret = True
+while ret:
+    ret, frame = video.read()
+
+    if ret:
+        cv.imshow("Kitten", frame)
+        cv.waitKey(40)
+
+# NOTE: While making condition this is more sensible.
+
+video.release()
+cv.destroyAllWindows()
+
+
