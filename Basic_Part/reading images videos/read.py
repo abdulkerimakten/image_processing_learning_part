@@ -32,18 +32,16 @@ capture.release()
 cv.destroyAllWindows()
 
 """
-isTrue, frame = capture.read(): capture.read() yöntemi, bir sonraki kareyi okur ve frame adlı değişkene atar. 
-isTrue ise, kare başarıyla okunduğunu gösteren bir boolean değerdir. Eğer isTrue False ise, video dosyasının sonuna gelinmiş demektir
-ve döngüden çıkılır.
+isTrue, frame = capture.read(): The capture.read() method reads the next frame and assigns it to the variable 'frame'.
+isTrue is a boolean value indicating whether the frame was successfully read. If isTrue is False, it means the end of the video file is reached, and the loop exits.
 
-cv.imshow("Video Of Dog", frame): cv.imshow() yöntemi, bir pencerede bir görüntüyü göstermek için kullanılır. 
-Bu satır, "Video Of Dog" adlı bir pencere oluşturur ve frame değişkenindeki kareyi bu pencerede gösterir.
+cv.imshow("Video Of Dog", frame): The cv.imshow() method is used to display an image in a window.
+This line creates a window named 'Video Of Dog' and displays the frame in the 'frame' variable in this window.
 
-if cv.waitKey(20) & 0xFF == "d":: Bu satır, bir tuşa basılıp basılmadığını kontrol eder. cv.waitKey(20) yöntemi, 
-her frame sonrası 20 milisaniye boyunca bir tuşa basılmayı bekler. Eğer kullanıcı "d" tuşuna basarsa (0xFF == "d"), döngüden çıkılır.
+if cv.waitKey(20) & 0xFF == ord('d'): This line checks if a key is pressed. The cv.waitKey(20) method waits for a key to be pressed for 20 milliseconds 
+after each frame. If the user presses the 'd' key (0xFF == ord('d')), the loop exits.
 
-capture.release(): VideoCapture nesnesini serbest bırakır. 
-Bu, video dosyasını işlemeyi bitirdiğimizde kaynakları serbest bırakmak için önemlidir.
+capture.release(): Releases the VideoCapture object. This is important to release resources when we've finished processing the video file.
 
-cv.destroyAllWindows(): Tüm OpenCV pencerelerini kapatır. Bu, programı sonlandırdığımızda tüm pencerelerin kapatılmasını sağlar.
+cv.destroyAllWindows(): Closes all OpenCV windows. This ensures all windows are closed when we terminate the program.
 """
