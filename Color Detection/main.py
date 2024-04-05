@@ -9,7 +9,7 @@ from PIL import Image
 Color_to_detect = [0,255,0] # green in BGR code as example
 
 
-# Set the camera (here we used webcam)
+# Set the camera (parameter depends on user's device)
 cap = cv.VideoCapture(1)
 
 while True:
@@ -35,7 +35,10 @@ while True:
 
 
         ## Bounding box part
+
         mask_ = Image.fromarray(mask)
+        # turn the frame into numpy array
+       
         bbox = mask_.getbbox()
 
         if bbox is not None:
@@ -45,7 +48,7 @@ while True:
             frame = cv.rectangle(frame, (x1,y1), (x2, y2), (0,255,0), 3)
         
         # ...CAMERA SECTION...
-        cv.imshow("WEBCAM", frame)
+        cv.imshow("CAMERA", frame)
 
         # close the camera when 'q' is pressed.
         if cv.waitKey(40) & 0xFF == ord("q"):
