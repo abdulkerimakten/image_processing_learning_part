@@ -6,7 +6,7 @@ from PIL import Image
 
 
 # Color we want to detect
-Color_to_detect = [0,255,0] # green in BGR code as example
+Color_to_detect = [0,0,255] # red in BGR code as example
 
 
 # Set the camera (parameter depends on user's device)
