@@ -6,10 +6,10 @@ from PIL import Image
 
 
 # Color we want to detect
-Color_to_detect = [0,0,255] # red in BGR code as example
+Color_to_detect = [0,255,255] # red in BGR code as example
 
 
-# Set the camera (parameter depends on user's device)
+# Set the camera (here we used webcam)
 cap = cv.VideoCapture(1)
 
 while True:
@@ -35,10 +35,7 @@ while True:
 
 
         ## Bounding box part
-
         mask_ = Image.fromarray(mask)
-        # turn the frame into numpy array
-       
         bbox = mask_.getbbox()
 
         if bbox is not None:
@@ -46,9 +43,21 @@ while True:
             # coordinates of the box
 
             frame = cv.rectangle(frame, (x1,y1), (x2, y2), (0,255,0), 3)
+            # Define the text and position
+            text = 'DETECTED'
+            position = (x1+10, y2 + 30)  # Coordinates of the bottom-left corner of the text
+
+            # Choose the font and other text properties
+            font = cv.FONT_HERSHEY_SIMPLEX
+            font_scale = 1
+            font_color = (0, 255, 255)  # White color in BGR format
+            thickness = 2  # Thickness of the text
+
+            # Put the text on the image
+            cv.putText(frame, text, position, font, font_scale, font_color, thickness)
         
         # ...CAMERA SECTION...
-        cv.imshow("CAMERA", frame)
+        cv.imshow("WEBCAM", frame)
 
         # close the camera when 'q' is pressed.
         if cv.waitKey(40) & 0xFF == ord("q"):
