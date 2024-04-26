@@ -50,7 +50,7 @@ while True:
             # Choose the font and other text properties
             font = cv.FONT_HERSHEY_SIMPLEX
             font_scale = 1
-            font_color = (0, 255, 255)  # White color in BGR format
+            font_color = (0, 255, 255)  # Yellow color in BGR format
             thickness = 2  # Thickness of the text
 
             # Put the text on the image
