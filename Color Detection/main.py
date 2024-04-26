@@ -9,7 +9,7 @@ from PIL import Image
 Color_to_detect = [0,255,255] # red in BGR code as example
 
 
-# Set the camera (here we used webcam)
+# Set the camera (choose whatever you want)
 cap = cv.VideoCapture(1)
 
 while True:
